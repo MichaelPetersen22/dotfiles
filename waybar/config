@@ -1,0 +1,79 @@
+{
+	// Main Configuration Options
+	"height": 35,
+	"spacing": 8,
+	"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+	"modules-center": ["clock", "custom/weather"],
+	"modules-right": ["tray", "custom/spotify", "network", "memory", "cpu", "disk"],
+
+	// Module Configuration
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "",
+			"7": "",
+			"8": "ﭮ",
+			"9": "",
+			"10": "",
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+	},
+	"sway/window": {
+		"rewrite": {
+			"(.*)": ""
+		}
+	},
+	"sway/mode": {
+		"format": " {}",
+		"tooltip": false
+	},
+	"clock": {
+		"format": "{:%H:%M}",
+		"format-alt": "{:%A %d %B %H:%M}",
+		"tooltip": false
+	},
+	"disk": {
+		"interval": 60,
+		"path" : "/",
+		"format": "{percentage_free}% ",
+		"tooltip-format": "Total Space: {total}\nFree Space: {free}\nUsed Space: {used} / {percentage_used}%"
+	},
+	"cpu": {
+		"interval": 1,
+		"format": "{usage}% "
+	},
+	"memory": {
+		"interval": 1,
+		"format": "{percentage}% ",
+		"tooltip-format": "Total Memory: {total:0.2f} GB\nUsed Memory: {used:0.2f} GB\nAvailable Memory: {avail:0.2f} GB"
+	},
+	"network": {
+		"interface": "enp5s0",
+		"format": "Internet",
+		"format-ethernet": "{ipaddr}/{cidr} ",
+		"format-wifi": "",
+		"format-disconnected": "睊",
+		"tooltip": false
+	},
+	"tray": {
+		"icon-size": 21,
+		"spacing": 10
+	},
+	"custom/weather": {
+		
+	},
+	"custom/spotify": {
+		"interval": 1,
+		"exec": "~/.config/waybar/modules/spotify.sh",
+		"exec-if": "pgrep spotify",
+		"return-type": "json",
+		"max-length": 40,
+		"escape": true
+	}
+
+
+	
+}

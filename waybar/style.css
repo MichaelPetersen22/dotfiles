@@ -1,0 +1,85 @@
+/* Color Palette */
+@define-color white #ffffff;
+@define-color muted-white #d9d8d8;
+@define-color dark-navy #0a1c24;
+@define-color transparent-text #191919;
+@define-color matte-orange #cd2626;
+@define-color matte-yellow #e49b0f;
+@define-color transparent rgba (25,25,25,0.5);
+
+
+
+/* Theme Color Settings */
+@define-color primary-color @transparent;
+@define-color text-color @muted-white;
+@define-color alert @matte-orange;
+@define-color visible @matte-yellow;
+
+/* Removing Theme Defaults */
+* {
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	text-shadow: none;
+	background: none;
+	transition-duration: 0s;
+}
+
+/* Theme Style Content */
+* {
+        font-family: 'Symbols Nerd Font', 'Noto Sans', sans-serif;
+        font-size: 16px;
+}
+
+window {
+        background: @primary-color;
+        color: @text-color;
+}
+
+#workspaces {
+	margin: 0 5px;
+	font-size: 30px;
+}
+
+#workspaces button {
+	color: @text-color;
+	padding: 0 5px;
+	box-shadow: inset 0 -3px transparent;
+	font-size: 30px ;
+
+}
+
+#workspaces button:hover {
+	transition-duration: 0.1s;
+	box-shadow: inset 0 -3px @white;
+}
+
+#workspaces button.visible {
+	box-shadow: inset 0 -3px @visible;
+}
+
+#workspaces button.focused {
+	box-shadow: inset 0 -3px @alert;
+}
+
+#workspaces button.urgent {
+	color: @alert;
+}
+
+#mode {
+	background: @alert;
+	padding: 0 10px;
+}
+
+.modules-right {
+	margin-right: 5px;
+}
+
+/* Corrects Module Position */
+#custom-spotify.paused {
+	margin-bottom: -2.5px;
+}
+
+#custom-spotify.playing {
+	margin-bottom: 2.5px;
+}
